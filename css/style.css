@@ -1,0 +1,22 @@
+.header{
+    height: 70px;
+}
+
+.notifiche{
+    height: 80px;
+}
+
+.cerca{
+    height: 60px;
+}
+
+.contatti{
+    height: calc(100vh - 210px);
+    overflow-y: auto;
+}
+
+#contatto{
+    height: 80px;
+
+}
+
