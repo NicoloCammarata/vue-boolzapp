@@ -6,6 +6,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
+            contactsIndex: 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -174,6 +175,9 @@ createApp({
         };
     },
     methods: {
+        contact(indiceDelContatto){
+            this.contactsIndex = indiceDelContatto
+        }
         
         
     }
