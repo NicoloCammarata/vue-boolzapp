@@ -20,3 +20,54 @@
 
 }
 
+.footer{
+    height: 80px;
+}
+
+.pagina{
+    height: calc(100vh - 150px);
+    background-image: url(/img/mine.jpg);
+    overflow-y: auto;
+
+}
+
+.container-messaggio-inviato{
+    height: fit-content;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container-messaggio-ricevuto{
+    height: fit-content;
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+.messaggio-inviato{
+    width: fit-content;
+    max-width: 70%;
+    height: 15px;
+    padding: 15px;
+    border: 2px black solid;
+    background-color: greenyellow;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+
+    
+}
+
+.messaggio-ricevuto{
+    width: fit-content;
+    max-width: 70%;
+    height: 15px;
+    padding: 15px;
+    border: 2px black solid;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+
+    
+}

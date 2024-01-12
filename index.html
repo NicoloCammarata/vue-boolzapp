@@ -9,7 +9,7 @@
     <title>Boolzap</title>
 </head>
 <body>
-    <section class="container-fluid ">
+    <section id="app" class="container-fluid ">
         <div class="row">
             <div class="col-4  container-fluid">
                 <div class="header row justify-content-between bg-light ">
@@ -48,7 +48,7 @@
                         
                     </div>
                 </div>
-                <div id="app" class="row contatti">
+                <div  class="row contatti">
                     <ul class="container-fluid">
                         <li id="contatto" class="col row border" v-for="(contact, i) in contacts" >
                        
@@ -75,9 +75,70 @@
                 </div>
 
             </div>
-            <div class="col-8 h-100 border ">
+            <div class="col-8 h-100  ">
+                <div class="row header bg-light border">
+                    <div class="col-1 d-flex align-items-center">
+                        <img class="w-100 rounded-circle p-2" src="img/avatar_1.jpg" alt="">
+                        
+
+                    </div>
+                    <div class="col-4 p-1">
+                        <span><strong> Michele </strong></span><br>
+                        <span class="text-body-secondary fs-6 "> Ultimo accesso oggi alle 12:00</span>
+
+                    </div>
+                    <div class="col p-1 d-flex justify-content-end align-items-center">
+                        <span class="p-2 fs-3 text-secondary"><i class="fa-solid fa-magnifying-glass"></i></span>
+                        <span class="p-2 fs-3 text-secondary"><i class="fa-solid fa-wave-square"></i></span>
+                        <span class="p-2 fs-3 text-secondary"><i class="fa-solid fa-list"></i></span>
+
+                    </div>
+
+
+                </div>
+                <div class="pagina p-5 row ">
+                    <div class="container-messaggio-inviato col-12  ">
+                        <div class="messaggio-inviato">
+                            {{ contacts[0].messages[0].message }}
+
+                        </div>
+                        
+                    </div>
+                    <div class="container-messaggio-inviato col-12  ">
+                        <div class="messaggio-inviato">
+                            {{ contacts[0].messages[1].message }}
+
+                        </div>
+                        
+                    </div>
+                    <div class="container-messaggio-ricevuto col-12  ">
+                        <div class="messaggio-ricevuto">
+                            {{ contacts[0].messages[2].message }}
+
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                
+                <div class="row footer  bg-light border">
+                    <div class="col-1 d-flex align-items-center bg-light">
+                        <span class=" fs-3 text-secondary"><i class="fa-solid fa-face-smile"></i></span>
+
+                    </div>
+                    <div class="col-10 d-flex align-items-center">
+                        <input class="w-100" placeholder="Scrivi un messaggio" type="text">
+
+                    </div>
+                    <div class="col-1 d-flex align-items-center bg-light">
+                        <span class=" fs-3 text-secondary"><i class="fa-solid fa-microphone"></i></span>
+
+                    </div>
+
+                </div>
 
             </div>
+                
 
         </div>
     </section>
