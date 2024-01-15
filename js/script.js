@@ -5,8 +5,19 @@
 const { createApp } = Vue;
 createApp({
     data() {
+        
         return {
             contactsIndex: 0,
+
+            newMessage:{
+                
+            },
+            newMessageRecived:{
+                date: '20/03/2020 16:30:55',
+                message: 'oke',
+                status: 'received'
+            },
+
             contacts: [
                 {
                     name: 'Michele',
@@ -177,6 +188,39 @@ createApp({
     methods: {
         contact(indiceDelContatto){
             this.contactsIndex = indiceDelContatto
+        },
+        addMessage(contactsIndex){
+
+            if((this.newMessage.message.trim()).length > 0){
+                const newMessageobj = {
+                    date: '10/01/2020 15:30:55',
+                    message: this.newMessage.message,
+                    status: 'sent'
+                }
+                console.log(newMessageobj)
+
+                this.contacts[contactsIndex].messages.push(newMessageobj)
+                this.newMessage.message= ''
+
+                setTimeout(() =>{
+                    const newMessageRecivedobj = {
+                        date: this.newMessageRecived.date,
+                        message: this.newMessageRecived.message,
+                        status: this.newMessageRecived.status
+                    }
+    
+                    this.contacts[contactsIndex].messages.push(newMessageRecivedobj)
+
+                }, 1000)
+
+                
+                
+                
+            };
+
+
+            
+            
         }
         
         

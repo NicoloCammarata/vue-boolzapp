@@ -96,65 +96,33 @@
 
 
                 </div>
-                <div  class="pagina p-5 row ">
-                    <div v-if="contacts[contactsIndex].messages[0].status == 'received'" class="container-messaggio-ricevuto  col-12">
-                        <div   class=" messaggio-ricevuto">
-                            {{ contacts[contactsIndex].messages[0].message }}
-
+                <div  class="pagina p-5 row">
+                    <div v-for="(elem, j) in contacts[contactsIndex].messages" class="row">
+                        <div v-if="contacts[contactsIndex].messages[j].status == 'received'"    class="container-messaggio-ricevuto  col-12">
+                            <div   class=" messaggio-ricevuto">
+                                {{ contacts[contactsIndex].messages[j].message }}
+    
+                            </div>
+                            
                         </div>
-                        
-                    </div>
-                    <div v-else-if="contacts[contactsIndex].messages[0].status == 'sent'" class="container-messaggio-inviato  col-12" >
-                        <div   class=" messaggio-inviato">
-                            {{ contacts[contactsIndex].messages[0].message }}
-
+                        <div  v-else-if="contacts[contactsIndex].messages[j].status == 'sent'"   class="container-messaggio-inviato  col-12" >
+                            <div   class=" messaggio-inviato">
+                                {{ contacts[contactsIndex].messages[j].message }}
+    
+                            </div>
+                            
                         </div>
-                        
                     </div>
-                    
-                    <div v-if="contacts[contactsIndex].messages[1].status == 'received'" class="container-messaggio-ricevuto  col-12">
-                        <div   class=" messaggio-ricevuto">
-                            {{ contacts[contactsIndex].messages[1].message }}
-
-                        </div>
-                        
-                    </div>
-                    <div v-else-if="contacts[contactsIndex].messages[1].status == 'sent'" class="container-messaggio-inviato  col-12">
-                        <div   class=" messaggio-inviato">
-                            {{ contacts[contactsIndex].messages[1].message }}
-
-                        </div>
-                        
-                    </div>
-                    
-                    <div v-if="contacts[contactsIndex].messages[2].status == 'received'" class="container-messaggio-ricevuto  col-12">
-                        <div   class=" messaggio-ricevuto">
-                            {{ contacts[contactsIndex].messages[2].message }}
-
-                        </div>
-                        
-                    </div>
-                    <div v-else-if="contacts[contactsIndex].messages[2].status == 'sent'" class="container-messaggio-inviato  col-12">
-                        <div   class=" messaggio-inviato">
-                            {{ contacts[contactsIndex].messages[2].message }}
-
-                        </div>
-                        
-                    </div>
-                    
-                    
-                    
-                    
-                    
+                
                 </div>
                 
-                <div class="row footer  bg-light border">
+                <div class="row footer  bg-light border" >
                     <div class="col-1 d-flex align-items-center bg-light">
                         <span class=" fs-3 text-secondary"><i class="fa-solid fa-face-smile"></i></span>
 
                     </div>
                     <div class="col-10 d-flex align-items-center">
-                        <input class="w-100" placeholder="Scrivi un messaggio" type="text">
+                        <input v-model="newMessage.message" class="w-100" placeholder="Scrivi un messaggio" @keyup.enter="addMessage(contactsIndex)" type="text">
 
                     </div>
                     <div class="col-1 d-flex align-items-center bg-light">
