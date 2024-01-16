@@ -33,6 +33,9 @@
 
 }
 
+.hide{
+    display: none;
+}
 
 .container-messaggio-inviato{
     max-width: 150px;

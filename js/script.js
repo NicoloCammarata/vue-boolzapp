@@ -9,6 +9,12 @@ createApp({
         return {
             contactsIndex: 0,
 
+            search: '',
+
+            newSearchContacts: ['']
+
+            ,
+
             newMessage:{
                 
             },
@@ -219,6 +225,36 @@ createApp({
             };
 
 
+            
+            
+        },
+        foundContact(){
+           const contatto = document.querySelectorAll('.casella-contatto')
+        
+            console.log(contatto)
+
+            
+            for(let z = 0; z < contatto.length; z++){
+                const nameSplit = this.contacts[z].name
+                
+                if(nameSplit.includes(this.search)){
+                    console.log(this.contacts[z].name)
+    
+                }
+                else{
+
+                    contatto[z].classList.toggle('d-none')
+                    
+    
+                }  
+                
+        
+            }
+            this.search=''
+
+
+     
+   
             
             
         }
